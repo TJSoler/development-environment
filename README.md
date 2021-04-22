@@ -51,11 +51,16 @@ cd development-environment
 # want to run locally. To start with, copy the default file.
 cp stack.default.yml stack.yml
 
+# Create your "environment" - the particular configuration you
+# want to run locally. To start with, copy the default file.
+cp .env.example .env
+
 # Start everything
 ./bin/start
 ```
 
 Once the script has finished, the website will be running at http://local.exercism.io:3020.
+Remember if you have changed the default port, the url will be different for you.
 
 ### Updating everything
 

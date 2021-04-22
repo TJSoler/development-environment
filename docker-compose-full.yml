@@ -52,7 +52,7 @@ services:
       - EXERCISM_DOCKER=true
       - OVERMIND_SOCKET=/usr/src/app/tmp/overmind.sock
     ports:
-      - 3020:3020
+      - ${WEBSITE_PORT}:3020
       - 9999:3035
       - 9998:3334
     volumes:

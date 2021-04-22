@@ -29,7 +29,7 @@ configure:
       CABLE_URL: "ws://local.exercism.io:9998/cable"
     # reconfigure the external ports to avoid conflicts
     ports:
-      - 3020:3020 # rails, 3020 internal
+      - ${WEBSITE_PORT}:3020 # rails, 3020 internal
       - 9999:3035 # webpack, 3035 internal
       - 9998:3334 # cable, 3334 internal
 

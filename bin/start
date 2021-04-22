@@ -30,8 +30,13 @@ function filterUp() {
 }
 
 function testWebsiteConnection() {
-	printf "GET / HTTP/1.1\r\nHost: localhost:3020\r\n\r\n" | nc -w 1 localhost 3020 | grep -c '<body>' || true
+	printf "GET / HTTP/1.1\r\nHost: localhost:${WEBSITE_PORT}\r\n\r\n" | nc -w 1 localhost ${WEBSITE_PORT} | grep -c '<body>' || true
 }
+
+# Reads .env file
+set -o allexport;
+source .env;
+set +o allexport
 
 cat setup/src/exercism_logo.txt
 echo
@@ -65,7 +70,7 @@ if [ ! -f "$STARTED_ONCE" ]; then
 fi
 
 echo ""
-echo "Starting stack with website running at http://localhost:3020..."
+echo "Starting stack with website running at http://localhost:${WEBSITE_PORT}..."
 echo ""
 
 # them spool them up, this is in an effort to reduce what is happening
@@ -89,5 +94,5 @@ else
     done
 
     echo
-    echo "Website running at http://localhost:3020/"
+    echo "Website running at http://localhost:${WEBSITE_PORT}/"
 fi

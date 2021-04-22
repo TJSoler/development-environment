@@ -39,6 +39,7 @@ For our purposes, the component will be named `<ComponentName>` with different c
 - Create a file `/app/controllers/test/components/<component_name>_controller.rb`
 - Create a class that inherits from the `ApplicationController`
 - This allows you to navigate in the browser to: `http://localhost:3020/test/components/<component_name>` to view the component rendered
+- Take into account if you have changed the default port, this url will be different for you
 
 ```ruby
 class  Test::Components::<ComponentName> < ApplicationController  \# rubocop:disable Layout/LineLength
